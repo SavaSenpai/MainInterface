@@ -1,0 +1,37 @@
+.flying-container {
+  position: fixed;
+  top: 20px;
+  left: 150px;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.flying-image {
+  position: relative;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  animation: fly 15s linear infinite;
+}
+
+/* Анимация полета картинки */
+@keyframes fly {
+  0% {
+    transform: translateX(90vw) translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(50vw) translateY(500px); 
+  }
+  50% {
+    transform: translateX(0) translateY(0); 
+  }
+  75% {
+    transform: translateX(-50vw) translateY(250px); 
+  }
+  100% {
+    transform: translateX(-100vw) translateY(0); 
+    opacity: 0;
+  }
+}
