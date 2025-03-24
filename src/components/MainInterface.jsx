@@ -39,11 +39,12 @@ export default function MainInterface() {
   };
 
   return (
+    <div className="main-interface">
     <div className="p-6 max-w-xl mx-auto space-y-4">
       <h2 className="text-2xl font-bold">🏗 Демоверсія вибору рішень</h2>
       <div>
         <label className="block font-medium mb-1">Серія будівлі</label>
-        <select className="w-full border p-2" onChange={e => setBuildingType(e.target.value)} value={buildingType}>
+        <select className=" select w-full border p-2" onChange={e => setBuildingType(e.target.value)} value={buildingType}>
           <option value="">Оберіть серію</option>
           <option value="П-46">П-46</option>
           <option value="І-464">І-464</option>
@@ -55,7 +56,7 @@ export default function MainInterface() {
       {damages.map((d, index) => (
         <div key={index} className="space-y-2 border rounded p-3">
           <p className="font-semibold">Пошкодження {index + 1}</p>
-          <select className="w-full p-2 border" value={d.type} onChange={e => handleDamageChange(index, 'type', e.target.value)}>
+          <select className=" select w-full p-2 border" value={d.type} onChange={e => handleDamageChange(index, 'type', e.target.value)}>
             <option value="">Тип пошкодження</option>
             <option value="тріщина">Тріщина</option>
             <option value="обвал">Обвал</option>
@@ -71,10 +72,10 @@ export default function MainInterface() {
           </select>
         </div>
       ))}
-      <button className="bg-gray-100 text-sm px-4 py-1 border" onClick={addDamage}>➕ Додати ще</button>
+      <button className=" button bg-gray-100 text-sm px-4 py-1 border" onClick={addDamage}>➕ Додати ще</button>
       <div className="flex gap-2">
-        <button className="bg-blue-600 text-white px-4 py-2" onClick={getDecision}>Отримати рішення</button>
-        <button className="bg-gray-200 px-4 py-2" onClick={downloadReport}>Завантажити звіт</button>
+        <button className="button bg-blue-600 text-white px-4 py-2" onClick={getDecision}>Отримати рішення</button>
+        <button className="button bg-gray-200 px-4 py-2" onClick={downloadReport}>Завантажити звіт</button>
       </div>
       {result && (
         <div className="p-4 mt-4 bg-green-100 rounded">
@@ -82,6 +83,7 @@ export default function MainInterface() {
           <p><strong>Рішення:</strong> {result.solution}</p>
         </div>
       )}
+    </div>
     </div>
   );
 }
