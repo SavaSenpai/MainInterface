@@ -8,7 +8,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} НДІБВ
         </p>
         <div className="footer__links">
-          <a href="mailto:ndibv_post@ukr.net">Связаться с нами</a>
+          <a href="mailto:ndibv_post@ukr.net">Відділ по роботі із замовниками</a>
         </div>
       </div>
     </footer>
