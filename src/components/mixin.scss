@@ -1,6 +1,0 @@
-@mixin prevent-shrinkage($min-width) {
-  @media (max-width: $min-width) {
-    width: auto;
-    min-width: 100%; /* Чтобы блоки не сжимались меньше 100% */
-  }
-}

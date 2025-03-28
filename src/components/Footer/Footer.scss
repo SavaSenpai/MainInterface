@@ -1,0 +1,108 @@
+$colortext:#fff;
+$maintext: #6c788b;
+$maintitletext: #253757;
+$colorbackgraund:#2c2c2c;
+$colorbutton:#2060f6;
+$colorplace: #c0cdd7;
+
+@mixin inlainer {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 40px;
+  }
+
+  @include onSmalldesktop {
+    padding-inline: 54px;
+  }
+
+  @include onDesktop {
+    padding-inline: 228px;
+  }
+}
+
+@mixin onBidDeskmenu {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin onSmalldesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+.footer {
+  background-color: $colorbackgraund;
+  color: $colortext;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  min-width: 400px;
+
+  @include inlainer;
+
+  @include onSmalldesktop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    @include onSmalldesktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+  }
+
+  .footer__text {
+    font-size: 14px;
+    color: $maintext;
+    
+    @include onSmalldesktop {
+      font-size: 16px;
+    }
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onSmalldesktop {
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    a {
+      color: $colortext;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $colorbutton;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styleMain.css';
+import './MainInterface.scss';
 
 export default function MainInterface() {
   const [buildingType, setBuildingType] = useState('');
@@ -66,6 +66,7 @@ export default function MainInterface() {
       <option value="деформація">Деформація</option>
       <option value="осідання">Осідання</option>
     </select>
+    
     <select className="custom-select" value={d.location} onChange={e => handleDamageChange(index, 'location', e.target.value)}>
       <option value="">Локація</option>
       <option value="фундамент">Фундамент</option>
@@ -92,3 +93,4 @@ export default function MainInterface() {
     </div>
   );
 }
+

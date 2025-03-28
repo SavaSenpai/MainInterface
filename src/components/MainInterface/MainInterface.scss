@@ -1,44 +1,30 @@
-@import 'mixin.scss';
-
-body, html {
-  height: 100%;
-}
 
 .main-interface {
   background-color: LightSteelBlue;
   width: 100%;
-  min-width: 400px; /* Минимальная ширина блока */
+  min-width: 400px; 
   padding: 2rem;
   display: grid;
   place-items: center;
-  margin-top: 80px;
-  margin-bottom: 80px;
   height: auto;
-  box-sizing: border-box; /* Убедимся, что отступы не влияют на ширину */
-}
-
-/* При ширине экрана меньше 400px */
-@media (max-width: 400px) {
-  .main-interface {
-    width: 100%; /* Ширина на 100% */
-    min-width: 400px; /* Минимальная ширина для предотвращения сжатия */
-  }
+  box-sizing: border-box; 
 }
 
 .NameZagolov {
-  display: flex; /* Чтобы работало align-items */
-  justify-content: center; /* Выравнивание по центру */
+  display: flex; 
+  justify-content: center;
   align-items: center;
-  margin: 10px 0; /* Одинаковые отступы сверху и снизу */
-  padding: 5px 10px; /* Добавляем внутренние отступы */
-  text-align: center; /* Если это текстовый элемент */
+  margin: 10px 0;
+  padding: 5px 10px; 
+  text-align: center; 
 }
 
 .BlockLable {
+  pointer-events: none;
   display: flex;
   align-items: center;
-  margin: 10px 0; /* Чтобы не было наложений */
-  padding: 5px; /* Внутренний отступ */
+  margin: 10px 0; 
+  padding: 5px; 
 }
 
 .custom-select {
@@ -52,11 +38,11 @@ body, html {
   cursor: pointer;
   outline: none;
   transition: 0.3s;
-  margin-bottom: 10px; /* Добавляем отступ между селектами */
+  margin-bottom: 10px; 
 }
 
 .custom-select:last-child {
-  margin-bottom: 0; /* Чтобы у последнего селекта не было лишнего отступа */
+  margin-bottom: 0; 
 }
 
 .custom-select:hover {
