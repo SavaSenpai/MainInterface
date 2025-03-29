@@ -1,0 +1,21 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #2c2c2c;
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: 80px;
+    margin: 0;
+    color: #d3c8c8;
+  }
+
+  p {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+}
