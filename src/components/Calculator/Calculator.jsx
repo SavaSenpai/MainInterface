@@ -11,7 +11,6 @@ const Calculator = () => {
 
   const calculateResult = () => {
     try {
-      // Используем Function для безопасного вычисления
       const safeResult = new Function("return " + input)();
       setResult(safeResult);
     } catch {

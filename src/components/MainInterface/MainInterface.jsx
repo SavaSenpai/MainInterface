@@ -42,7 +42,7 @@ export default function MainInterface() {
   return (
 <div className="main-interface">
   <div className="p-6 max-w-xl mx-auto space-y-4">
-    <h2 className="NameZagolov">🏗 Демоверсія вибору рішень</h2>
+    <h2 className="NameZagolov">Демоверсія вибору рішень</h2>
     
     <div className="damage-block">
       <label className="BlockLable">Серія будівлі</label>
@@ -77,7 +77,7 @@ export default function MainInterface() {
   </div>
 ))}
 <div className="button-container">
-      <button className="button btn-1 btn-sep icon-info" onClick={addDamage}>➕ Додати ще</button>
+      <button className="button btn-1 btn-sep icon-info" onClick={addDamage}>Додати ще</button>
       <div className="flex gap-2">
         <button className="button btn-1 btn-sep icon-info" onClick={getDecision}>Отримати рішення</button>
         <button className="button btn-1 btn-sep icon-info" onClick={downloadReport}>Завантажити звіт</button>

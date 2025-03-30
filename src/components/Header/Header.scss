@@ -46,43 +46,112 @@ $colorplace: #c0cdd7;
 }
 
 .header {
+  height: 200px;
   background-color: $colorbackgraund;
   padding-top: 20px;
-  height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: $colortext;
-  @include inlainer; // Используем миксин для адаптивных отступов
+  @include inlainer;
+
+  @include onTablet {
+    height: 120px;
+  }
+  @include onSmalldesktop {
+    height: 140px;
+  }
+  @include onDesktop {
+    height: 160px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column; // По умолчанию столбик
+    gap: 15px;
+
+    @include onTablet {
+      flex-direction: column; // В столбик только на планшетах и мобильных
+      align-items: center;
+      gap: 15px;
+    }
+
+    @include onSmalldesktop {
+      flex-direction: row;
+      
+    }
+
+    @include onDesktop {
+      flex-direction: row; // В ряд на устройствах с экраном больше 1600px
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column; // По умолчанию в столбик
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include onTablet {
+      flex-direction: column; // В столбик только на планшетах и мобильных
+      align-items: center;
+      gap: 10px;
+    }
+
+    @include onSmalldesktop {
+      flex-direction: row; // В ряд на устройствах с экраном больше 1024px
+    }
+
+    @include onDesktop {
+      flex-direction: row; // В ряд на устройствах с экраном больше 1600px
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__logo-image {
+    width: 70px; /* Размер изображения, можно подкорректировать */
+    height: auto;
+    margin-right: 10px; /* Расстояние между картинкой и текстом */
+  }
+  
+  &__logo-text {
+    font-size: 24px; /* Размер шрифта для текста */
+    font-weight: bold;
+  }
 
   &__link {
     text-decoration: none;
     color: $colortext;
     font-weight: 600;
-    padding: 10px 15px;
+    padding: 5px 5px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    white-space: nowrap; // Запрещает перенос текста
+  
     &:hover {
       background-color: lighten($colorbackgraund, 10%);
       color: $colorbutton;
+      transform: scale(1.1); // Увеличиваем элемент
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Добавляем тень
     }
-
-    &:active {
-      transform: scale(0.95);
-    }
-
+  
+  
     @include onTablet {
       font-size: 16px;
     }
-
     @include onSmalldesktop {
       font-size: 18px;
     }
-
     @include onDesktop {
       font-size: 20px;
     }
   }
 }
+

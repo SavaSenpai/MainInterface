@@ -2,16 +2,16 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import './Layout.scss';  // Если нужна стилизация
+import './Layout.scss';
 
 const Layout = () => {
   return (
     <div className="layout">
-      <Header />  {/* Ваш хедер */}
+      <Header />
       <main className="layout__content">
-        <Outlet />  {/* Здесь будет рендериться контент страниц */}
+        <Outlet />
       </main>
-      <Footer />  {/* Ваш футер */}
+      <Footer />
     </div>
   );
 };

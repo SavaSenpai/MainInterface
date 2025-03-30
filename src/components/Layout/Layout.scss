@@ -1,0 +1,64 @@
+$colortext:#fff;
+$maintext: #000;
+$maintitletext: #253757;
+$colorbackgraund:#B0C4DE;
+$colorbutton:#2060f6;
+$colorplace: #c0cdd7;
+
+@mixin inlainer {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 40px;
+  }
+
+  @include onSmalldesktop {
+    padding-inline: 54px;
+  }
+
+  @include onDesktop {
+    padding-inline: 228px;
+  }
+}
+
+@mixin onBidDeskmenu {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin onSmalldesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+.layout {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $colorbackgraund;
+  color: $colortext;
+
+  &__content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: lighten($colorbackgraund, 10%);
+    color: $maintext;
+    @include inlainer;
+  }
+}
