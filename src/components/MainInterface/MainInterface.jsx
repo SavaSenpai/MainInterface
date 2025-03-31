@@ -103,12 +103,12 @@ export default function MainInterface() {
               <h3 className="report-title">Звіт</h3>
               <p className="solution-details"><strong>Серія будівлі:</strong> {buildingType}</p>
               {damages.map((d, i) => (
-                <p className="solution-details" key={i}><strong>Пошкодження {i + 1}:</strong> {d.type} — {d.location}</p>
+                <p className="solution-details" key={i}><strong>Пошкодження № {i + 1}:</strong> {d.type} — {d.location}</p>
               ))}
 
               <p className="solution-details"><strong>Рішення:</strong> {result.solution}</p>
               <p className="solution-details">{result.solutionDetails}</p>
-              <button className="button__download" onClick={downloadReport}>Скачати звіт</button>
+              <button className="button__download" onClick={downloadReport}>Завантажити звіт</button>
             </div>
           </div>
         )}
