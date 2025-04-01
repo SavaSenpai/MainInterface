@@ -1,80 +1,111 @@
-.calculator {
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #2c2c2c;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+@mixin inlainer {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 40px;
+  }
+
+  @include onSmalldesktop {
+    padding-inline: 54px;
+  }
+
+  @include onDesktop {
+    padding-inline: 228px;
+  }
+}
+
+@mixin onBidDeskmenu {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin onSmalldesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   text-align: center;
-  color: #fff;
+  @include inlainer;
 
-  &__title {
-    font-size: 24px;
-    margin-bottom: 10px;
+  @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  &__display {
-    width: 100%;
-    height: 50px;
-    font-size: 20px;
-    text-align: right;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #444;
-    color: #fff;
-    margin-bottom: 10px;
+  @include onSmalldesktop {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  &__buttons {
-    display: grid;
+  @include onDesktop {
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-bottom: 10px;
   }
+}
 
-  &__button {
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #555;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.calculator-block {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    &:hover {
-      background-color: #777;
-    }
-
-    &:active {
-      background-color: #999;
-    }
+  &:hover {
+    transform: translateY(-5px);
   }
+}
 
-  &__clear {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #d9534f;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.calculator-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+  display: block; 
+}
 
-    &:hover {
-      background-color: #c9302c;
-    }
+.calculator-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    &:active {
-      background-color: #ac2925;
-    }
-  }
+.calculator-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
 
-  &__result {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
+.calculator-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  margin-top: auto; /* Кнопка прижата к низу блока */
+
+  &:hover {
+    background-color: #0056b3;
   }
 }

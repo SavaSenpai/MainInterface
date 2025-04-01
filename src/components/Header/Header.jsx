@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './Header.scss'; // Подключаем SCSS
-import logo from './logo-black.png'; // Подключаем картинку (путь изменяй в зависимости от местоположения файла)
+import logo from './logo-black.png';
 
 function Header() {
   return (
@@ -14,7 +14,7 @@ function Header() {
         <ul className="header__menu">
           <li><Link to="/MainInterface" className="header__link">Головна</Link></li>
           <li><Link to="/DecisionMaking" className="header__link">Прийняття рішень</Link></li>
-          <li><Link to="/Calculator" className="header__link">Калькулятори</Link></li>
+          <li><Link to="/Calculator" className="header__link">Розрахункове ПЗ</Link></li>
         </ul>
       </nav>
     </header>
