@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/MainInterface/static/css/main.ec39a477.css",
-    "main.js": "/MainInterface/static/js/main.720e1cca.js",
+    "main.css": "/MainInterface/static/css/main.5d144efa.css",
+    "main.js": "/MainInterface/static/js/main.8768e489.js",
     "static/js/453.ed3810f9.chunk.js": "/MainInterface/static/js/453.ed3810f9.chunk.js",
     "static/media/found.png": "/MainInterface/static/media/found.d609e52fe21ec94d354c.png",
     "static/media/not-found.png": "/MainInterface/static/media/not-found.faca412aea9fb6dff6a3.png",
+    "static/media/SCAD.ico": "/MainInterface/static/media/SCAD.c4b986c24ad5ae596e06.ico",
+    "static/media/AUTOCAD.ico": "/MainInterface/static/media/AUTOCAD.04be351062d69e311309.ico",
+    "static/media/SAPFIR.ico": "/MainInterface/static/media/SAPFIR.2ddd3995d9990c92f823.ico",
+    "static/media/LIRA.ico": "/MainInterface/static/media/LIRA.d0bf452d29428e743d27.ico",
+    "static/media/PLAXIS.ico": "/MainInterface/static/media/PLAXIS.14f245bbd3673fce001e.ico",
+    "static/media/STAAD.ico": "/MainInterface/static/media/STAAD.c676478d0d9ec14a4205.ico",
     "index.html": "/MainInterface/index.html",
-    "main.ec39a477.css.map": "/MainInterface/static/css/main.ec39a477.css.map",
-    "main.720e1cca.js.map": "/MainInterface/static/js/main.720e1cca.js.map",
+    "main.5d144efa.css.map": "/MainInterface/static/css/main.5d144efa.css.map",
+    "main.8768e489.js.map": "/MainInterface/static/js/main.8768e489.js.map",
     "453.ed3810f9.chunk.js.map": "/MainInterface/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec39a477.css",
-    "static/js/main.720e1cca.js"
+    "static/css/main.5d144efa.css",
+    "static/js/main.8768e489.js"
   ]
 }
