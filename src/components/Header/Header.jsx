@@ -6,10 +6,10 @@ import logo from './logo-black.png';
 function Header() {
   return (
     <header className="header">
-      <div className="header__logo">
+      <Link to="/MainInterface" className="header__logo">
         <img src={logo} alt="Logo" className="header__logo-image" />
         <span className="header__logo-text">НДІБВ</span>
-      </div>
+      </Link>
       <nav className="header__nav">
         <ul className="header__menu">
           <li><Link to="/MainInterface" className="header__link">Головна</Link></li>

@@ -1,9 +1,9 @@
-$colortext:#fff;
-$maintext: #6c788b;
-$maintitletext: #253757;
-$colorbackgraund:#2c2c2c;
-$colorbutton:#2060f6;
-$colorplace: #c0cdd7;
+$colortext: #f0f0f0;
+$maintext: #a0aaba;
+$maintitletext: #1e2a40;
+$colorbackgraund: #1c1c1c;
+$colorbutton: #3b82f6;
+$colorplace: #8fa1b2;
 
 @mixin inlainer {
   padding-inline: 20px;
@@ -17,7 +17,7 @@ $colorplace: #c0cdd7;
   }
 
   @include onDesktop {
-    padding-inline: 228px;
+    padding-inline: 200px;
   }
 }
 
@@ -46,63 +46,140 @@ $colorplace: #c0cdd7;
 }
 
 .footer {
+  font-weight: 400;
   background-color: $colorbackgraund;
   color: $colortext;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  width: 100%;
-  // min-width: 400px;
+  padding: 40px 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "contact"
+    "divider"
+    "credits";
+  text-align: center;
 
   @include inlainer;
 
-  @include onSmalldesktop {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "contact contact"
+      "divider divider"
+      "credits credits";
   }
-  
-  .footer__container {
+}
+
+.footer__container {
+  display: grid;
+  grid-area: contact;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+
+.footer__contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: left;
+  gap: 20px;
+  width: 100%;
+
+  @include onTablet {
+    justify-items: start;
+  }
+}
+
+.footer__contact__section {
+  width: 100%;
+  margin-bottom: 20px;
+  display: grid;
+  gap: 5px;
+}
+
+.footer__contact__section__title {
+  font-size: 1.1rem;
+  color: $colortext;
+  margin-bottom: 10px;
+}
+
+.footer__contact__section__text {
+  font-size: 1rem;
+  color: $colortext;
+  margin: 5px 0;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  a {
+    color: $colorplace;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer__contact__phone, .footer__contact__email, .footer__contact__address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  color: $colorbutton;
+}
+
+.footer__credits {
+  margin-top: 20px;
+  grid-area: credits;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  width: 100%;
+
+  @media (max-width: 639px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  @include onTablet {
+    display: flex; 
+    justify-content: center;
     align-items: center;
-    text-align: center;
     gap: 20px;
-    flex-wrap: wrap;
-
-    @include onSmalldesktop {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      text-align: left;
-    }
   }
+}
 
-  .footer__text {
-    font-size: 14px;
-    color: $maintext;
-    
-    @include onSmalldesktop {
-      font-size: 16px;
-    }
+.footer__credits__text {
+  font-size: 1rem;
+  color: $maintext;
+  margin: 5px 0;
+}
+
+.footer__credits__link {
+  color: $colorplace;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
+}
 
-  .footer__links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    @include onSmalldesktop {
-      flex-direction: row;
-      gap: 24px;
-    }
-
-    a {
-      color: $colortext;
-      text-decoration: none;
-      transition: color 0.3s ease-in-out;
-
-      &:hover {
-        color: $colorbutton;
-      }
-    }
-  }
+.footer__divider {
+  grid-area: divider;
+  width: 100%;
+  border-top: 1px solid $colorplace;
+  margin-top: 20px;
 }

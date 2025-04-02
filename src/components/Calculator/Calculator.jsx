@@ -20,7 +20,7 @@ const data = [
     title: "LIRA", 
     description: "Програма для розрахунку будівельних конструкцій", 
     img: LIRA, 
-    link: "hhttps://lira10.com/uk/home" 
+    link: "https://lira10.com/uk/home" 
   },
   { 
     id: 3, 
