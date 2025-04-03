@@ -169,16 +169,17 @@
   }
 }
 
+
 @include onTablet {
   .decision-making-section {
     max-width: 720px;
     padding: 25px;
   }
-
+  
   .form-group {
     gap: 15px;
   }
-
+  
   .submit-button {
     font-size: 1.2em;
   }
@@ -189,11 +190,11 @@
     max-width: 900px;
     padding: 30px;
   }
-
+  
   .form-group {
     gap: 20px;
   }
-
+  
   .submit-button {
     font-size: 1.3em;
   }
@@ -204,12 +205,82 @@
     max-width: 1200px;
     padding: 40px;
   }
-
+  
   .form-group {
     gap: 25px;
   }
-
+  
   .submit-button {
     font-size: 1.4em;
   }
+}
+
+.tooltip-icon {
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  margin-left: 5px;
+}
+
+.tooltip-box {
+  position: absolute;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  font-size: 14px;
+  color: #333;
+  z-index: 10;
+  margin-top: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.tooltip-icon:hover + .tooltip-box,
+.tooltip-box:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tooltip-box {
+  position: absolute;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  font-size: 14px;
+  color: #333;
+  z-index: 10;
+  margin-top: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.tooltip-box::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #f8f9fa transparent;
 }

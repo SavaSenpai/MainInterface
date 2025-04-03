@@ -5,6 +5,7 @@ import './DecisionMaking.scss';
 import { useDropzone } from 'react-dropzone';
 
 const DecisionMaking = () => {
+  const [tooltip, setTooltip] = useState(null); // Состояние для отображения тултипа
   const [formData, setFormData] = useState({
     fullName: '',
     position: '',
@@ -16,30 +17,39 @@ const DecisionMaking = () => {
     damagePhoto: null,
     problemDescription: '',
     solutionDescription: '',
+
+    classification: '',
+    otherField1: '',
+    otherField2: '',
+    otherField3: '',
+
     solutionPhoto: null,
   });
 
+  // Обработчик изменения данных формы
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData((prevState) => ({
+      ...prevState, // Сохраняем предыдущее состояние
+      [name]: value, // Обновляем только нужное поле
+    }));
   };
 
+  // Обработчик загрузки файла
   const handleFileChange = (file, field) => {
-    setFormData({
-      ...formData,
-      [field]: file,
-    });
+    setFormData((prevState) => ({
+      ...prevState, // Сохраняем предыдущее состояние
+      [field]: file, // Обновляем поле с файлом
+    }));
   };
 
-  // Для загрузки фото
+  // Для загрузки фото повреждений
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => handleFileChange(acceptedFiles[0], 'damagePhoto'),
   });
 
+  // Для загрузки фото решения
   const { getRootProps: getRootPropsSolution, getInputProps: getInputPropsSolution } = useDropzone({
     accept: 'image/*',
     onDrop: (acceptedFiles) => handleFileChange(acceptedFiles[0], 'solutionPhoto'),
@@ -113,6 +123,41 @@ const DecisionMaking = () => {
         </div>
 
         <div className="form-group">
+          <label className="form-label">
+            Класифікація об’єктів
+            <span
+              className="tooltip-icon"
+              onMouseEnter={() => setTooltip('classification')}
+              onMouseLeave={() => setTooltip(null)}
+            >
+              【?】
+            </span>
+            {tooltip === 'classification' && (
+              <div className="tooltip-box">
+                Рекомендовано виконувати за критеріями залежно від мети такої класифікації: за
+                призначенням, поверховістю, конструкцією стін, способом зведення, довговічністю,
+                вогнетривкістю, капітальністю тощо.
+              </div>
+            )}
+          </label>
+          <select
+            name="classification"
+            value={formData.classification}
+            onChange={handleInputChange}
+            className="form-select"
+          >
+            <option value="">Оберіть класифікацію</option>
+            <option value="Призначення">Призначення</option>
+            <option value="Поверховість">Поверховість</option>
+            <option value="Конструкція стін">Конструкція стін</option>
+            <option value="Спосіб зведення">Спосіб зведення</option>
+            <option value="Довговічність">Довговічність</option>
+            <option value="Вогнетривкість">Вогнетривкість</option>
+            <option value="Капітальність">Капітальність</option>
+          </select>
+        </div>
+
+        <div className="form-group">
           <label className="form-label">3. Оберіть серію будівлі</label>
           <select
             name="buildingSeries"
@@ -159,13 +204,119 @@ const DecisionMaking = () => {
           />
         </div>
 
+{/* ____________________________________________________ */}
+
+        {/* Пункт 2 */}
         <div className="form-group">
-          <label className="form-label">6. Рішення проблеми</label>
-          <textarea
-            name="solutionDescription"
-            value={formData.solutionDescription}
+          <label className="form-label">
+            Систематизація причин
+            <span
+              className="tooltip-icon"
+              onMouseEnter={() => setTooltip('causes')}
+              onMouseLeave={() => setTooltip(null)}
+            >
+              【?】
+            </span>
+            {tooltip === 'causes' && (
+              <div className="tooltip-box">
+                Типологія пошкоджень і руйнувань будівельних об'єктів мають бути достатніми для
+                визначення обсягів і причин аварії на конкретному об’єкті, прив’язки перевірених
+                організаційно-технологічних і технічних рішень для оптимізації методів тимчасового
+                укріплення.
+              </div>
+            )}
+          </label>
+          <select
+            name="otherField1"
+            value={formData.otherField1}
             onChange={handleInputChange}
-            placeholder="Опишіть вирішення проблемы"
+            className="form-select"
+          >
+            <option value="">Оберіть тип</option>
+            <option value="Тип1">Тип 1</option>
+            <option value="Тип2">Тип 2</option>
+            <option value="Тип3">Тип 3</option>
+          </select>
+          <label className="form-label">Свій варіант:</label>
+            <input
+              type="text"
+              name="customBuildingSeries"
+              value={formData.customBuildingSeries}
+              onChange={handleInputChange}
+              placeholder="Тип"
+              className="form-input"
+            />
+        </div>
+
+        {/* Пункт 4 */}
+        <div className="form-group">
+          <label className="form-label">
+            6. Перелік та опис типових та індивідуальних організаційно-технологічних рішень 
+            <span
+              className="tooltip-icon"
+              onMouseEnter={() => setTooltip('strategy')}
+              onMouseLeave={() => setTooltip(null)}
+            >
+              【?】
+            </span>
+            {tooltip === 'strategy' && (
+              <div className="tooltip-box">
+               Перелік має забезпечувати типологію рішень для організації 
+               робіт на конкретному об’єкті з урахуванням варіативності випадків аварій. 
+              </div>
+            )}
+          </label>
+
+          <select
+            name="otherField3"
+            value={formData.otherField3}
+            onChange={handleInputChange}
+            className="form-select"
+          >
+            <option value="">Оберіть</option>
+            <option value="Тимчасова">Тимчасова</option>
+            <option value="Постійна">Постійна</option>
+          </select>
+
+        {/* Пункт 3 */}
+        <div className="form-group">
+          <label className="form-label">
+           Систематизація та перелік технічних засобів з тимчасового підкріплення та підсилення 
+            <span
+              className="tooltip-icon"
+              onMouseEnter={() => setTooltip('accidents')}
+              onMouseLeave={() => setTooltip(null)}
+            >
+              【?】
+            </span>
+            {tooltip === 'accidents' && (
+              <div className="tooltip-box">
+                Систематизація та перелік технічних засобів 
+                з тимчасового підкріплення та підсилення повинні 
+                забезпечити можливість реалізації організаційно-технологічних 
+                рішень з укріплення конкретного об'єкта.
+              </div>
+            )}
+          </label>
+          <select
+            name="otherField2"
+            value={formData.otherField2}
+            onChange={handleInputChange}
+            className="form-select"
+          >
+            <option value="">Оберіть</option>
+            <option value="Технічна">Технічна</option>
+            <option value="Організаційна">Організаційна</option>
+          </select>
+        </div>
+
+
+          <label className="form-label">Опис рішень</label>
+          <textarea
+            name="problemDescription"
+            value={formData.problemDescription}
+            onChange={handleInputChange}
+            placeholder="Опишіть..."
             className="form-textarea"
           />
         </div>
