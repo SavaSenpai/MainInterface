@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MainInterface/static/css/main.2184119b.css",
-    "main.js": "/MainInterface/static/js/main.b0908b7d.js",
+    "main.css": "/MainInterface/static/css/main.99822baf.css",
+    "main.js": "/MainInterface/static/js/main.a53a138d.js",
     "static/js/453.ed3810f9.chunk.js": "/MainInterface/static/js/453.ed3810f9.chunk.js",
     "static/media/found.png": "/MainInterface/static/media/found.d609e52fe21ec94d354c.png",
     "static/media/not-found.png": "/MainInterface/static/media/not-found.faca412aea9fb6dff6a3.png",
@@ -12,12 +12,12 @@
     "static/media/PLAXIS.ico": "/MainInterface/static/media/PLAXIS.14f245bbd3673fce001e.ico",
     "static/media/STAAD.ico": "/MainInterface/static/media/STAAD.c676478d0d9ec14a4205.ico",
     "index.html": "/MainInterface/index.html",
-    "main.2184119b.css.map": "/MainInterface/static/css/main.2184119b.css.map",
-    "main.b0908b7d.js.map": "/MainInterface/static/js/main.b0908b7d.js.map",
+    "main.99822baf.css.map": "/MainInterface/static/css/main.99822baf.css.map",
+    "main.a53a138d.js.map": "/MainInterface/static/js/main.a53a138d.js.map",
     "453.ed3810f9.chunk.js.map": "/MainInterface/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2184119b.css",
-    "static/js/main.b0908b7d.js"
+    "static/css/main.99822baf.css",
+    "static/js/main.a53a138d.js"
   ]
 }
