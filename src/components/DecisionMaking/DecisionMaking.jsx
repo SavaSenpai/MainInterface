@@ -130,7 +130,7 @@ const DecisionMaking = () => {
               onMouseEnter={() => setTooltip('classification')}
               onMouseLeave={() => setTooltip(null)}
             >
-              【?】
+              🛈
             </span>
             {tooltip === 'classification' && (
               <div className="tooltip-box">
@@ -188,7 +188,7 @@ const DecisionMaking = () => {
           <label className="form-label">4. Фото пошкодження</label>
           <div {...getRootProps()} className="dropzone">
             <input {...getInputProps()} />
-            <p className="dropzone-text">Прикріпіть фото пошкодження</p>
+            <p className="dropzone-text">Прикріпіть фото</p>
           </div>
           {formData.damagePhoto && <p className="file-selected">File selected: {formData.damagePhoto.name}</p>}
         </div>
@@ -203,7 +203,9 @@ const DecisionMaking = () => {
             className="form-textarea"
           />
         </div>
-
+        <p className="form-hint">
+            Наприклад: "Пошкодження через вплив зовнішніх факторів" або "Аварійний стан через зношеність".
+        </p>
 {/* ____________________________________________________ */}
 
         {/* Пункт 2 */}
@@ -215,17 +217,18 @@ const DecisionMaking = () => {
               onMouseEnter={() => setTooltip('causes')}
               onMouseLeave={() => setTooltip(null)}
             >
-              【?】
+              🛈
             </span>
             {tooltip === 'causes' && (
               <div className="tooltip-box">
-                Типологія пошкоджень і руйнувань будівельних об'єктів мають бути достатніми для
-                визначення обсягів і причин аварії на конкретному об’єкті, прив’язки перевірених
-                організаційно-технологічних і технічних рішень для оптимізації методів тимчасового
-                укріплення
+                Типологія пошкоджень і руйнувань будівельних об'єктів має бути достатньою для
+                визначення обсягів і причин аварії на конкретному об’єкті, а також для прив’язки
+                перевірених організаційно-технологічних і технічних рішень, що сприяють оптимізації
+                методів тимчасового укріплення.
               </div>
             )}
           </label>
+          
           <select
             name="otherField1"
             value={formData.otherField1}
@@ -233,31 +236,22 @@ const DecisionMaking = () => {
             className="form-select"
           >
             <option value="">Оберіть тип</option>
-            <option value="Тип1">Тип 1</option>
-            <option value="Тип2">Тип 2</option>
-            <option value="Тип3">Тип 3</option>
+            <option value="Тип1">Тип 1 - Механічні пошкодження</option>
+            <option value="Тип2">Тип 2 - Корозійні процеси</option>
+            <option value="Тип3">Тип 3 - Деформаційні зміни</option>
           </select>
-          <label className="form-label">Свій варіант:</label>
-            <input
-              type="text"
-              name="customBuildingSeries"
-              value={formData.customBuildingSeries}
-              onChange={handleInputChange}
-              placeholder="Тип"
-              className="form-input"
-            />
         </div>
 
         {/* Пункт 4 */}
         <div className="form-group">
           <label className="form-label">
-            6. Перелік та опис типових та індивідуальних організаційно-технологічних рішень 
+            6. Типові та індивідуальні організаційно-технологічні рішення
             <span
               className="tooltip-icon"
               onMouseEnter={() => setTooltip('strategy')}
               onMouseLeave={() => setTooltip(null)}
             >
-              【?】
+              🛈
             </span>
             {tooltip === 'strategy' && (
               <div className="tooltip-box">
@@ -281,13 +275,13 @@ const DecisionMaking = () => {
         {/* Пункт 3 */}
         <div className="form-group">
           <label className="form-label">
-           Систематизація та перелік технічних засобів з тимчасового підкріплення та підсилення 
+            Технічні засоби з тимчасового підкріплення та підсилення 
             <span
               className="tooltip-icon"
               onMouseEnter={() => setTooltip('accidents')}
               onMouseLeave={() => setTooltip(null)}
             >
-              【?】
+              🛈
             </span>
             {tooltip === 'accidents' && (
               <div className="tooltip-box">
@@ -319,13 +313,16 @@ const DecisionMaking = () => {
             placeholder="Опишіть..."
             className="form-textarea"
           />
+          <p className="form-hint">
+            Наприклад: "Проблема була вирішена шляхом тимчасового зміцнення конструкцій...".
+          </p>
         </div>
 
         <div className="form-group">
           <label className="form-label">Фото рішення проблеми</label>
           <div {...getRootPropsSolution()} className="dropzone">
             <input {...getInputPropsSolution()} />
-            <p className="dropzone-text"> Прикріпіть фото рішення проблеми</p>
+            <p className="dropzone-text"> Прикріпіть фото</p>
           </div>
           {formData.solutionPhoto && <p className="file-selected">File selected: {formData.solutionPhoto.name}</p>}
         </div>

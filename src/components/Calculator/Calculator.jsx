@@ -13,14 +13,14 @@ const data = [
     title: "МОНОМАХ", 
     description: "Програма для розрахунку будівельних конструкцій", 
     img: МОНОМАХ, 
-    link: "https://www.liraland.ua/mono/" 
+    link: "https://www.ndibv.org/kontakty/" 
   },
   { 
     id: 2, 
     title: "LIRA", 
     description: "Програма для розрахунку будівельних конструкцій", 
     img: LIRA, 
-    link: "https://lira10.com/uk/home" 
+    link: "https://www.liraland.ua/lira/release-notes/2025/" 
   },
   { 
     id: 3, 

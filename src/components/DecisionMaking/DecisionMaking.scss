@@ -216,10 +216,11 @@
 }
 
 .tooltip-icon {
-  font-size: 14px;
+  font-size: 11px;
   cursor: pointer;
   color: #333;
   margin-left: 5px;
+  vertical-align: top;
 }
 
 .tooltip-box {
@@ -255,6 +256,11 @@
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.form-hint {
+  font-size: 14px;
+  color: #919191;
 }
 
 .tooltip-box {
