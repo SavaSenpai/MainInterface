@@ -6,6 +6,7 @@ import PLAXIS from './PLAXIS.ico';
 import SAPFIR from './SAPFIR.ico';
 import SCAD from './SCAD.ico';
 import STAAD from './STAAD.ico';
+import МОНОМАХ2024 from './MONOMAX2024.png';
 
 const data = [
   { 
@@ -13,14 +14,14 @@ const data = [
     title: "МОНОМАХ", 
     description: "Програма для розрахунку будівельних конструкцій", 
     img: МОНОМАХ, 
-    link: "https://www.ndibv.org/kontakty/" 
+    link: "https://www.liraland.ua/mono/" 
   },
   { 
     id: 2, 
-    title: "LIRA", 
+    title: "МОНОМАХ 2024", 
     description: "Програма для розрахунку будівельних конструкцій", 
-    img: LIRA, 
-    link: "https://www.liraland.ua/lira/release-notes/2025/" 
+    img: МОНОМАХ2024, 
+    link: "https://www.ndibv.org/kontakty/" 
   },
   { 
     id: 3, 
@@ -56,6 +57,13 @@ const data = [
     description: "Потужний інструмент для структурного аналізу", 
     img: STAAD, 
     link: "https://www.bentley.com/software/staad/" 
+  },
+  { 
+    id: 8, 
+    title: "LIRA", 
+    description: "Програма для розрахунку будівельних конструкцій", 
+    img: LIRA, 
+    link: "https://www.liraland.ua/lira/release-notes/2025/" 
   },
 ];
 
