@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MainInterface/static/css/main.45e642ea.css",
+    "main.css": "/MainInterface/static/css/main.352e57b4.css",
     "main.js": "/MainInterface/static/js/main.e6728934.js",
     "static/js/453.ed3810f9.chunk.js": "/MainInterface/static/js/453.ed3810f9.chunk.js",
     "static/media/found.jpg": "/MainInterface/static/media/found.8a5ec505cb3d8e80f681.jpg",
@@ -13,12 +13,12 @@
     "static/media/MONOMAX2024.png": "/MainInterface/static/media/MONOMAX2024.16dc6af7e76bc8441c6c.png",
     "static/media/not-found.png": "/MainInterface/static/media/not-found.e907004616f0cf61ce3c.png",
     "index.html": "/MainInterface/index.html",
-    "main.45e642ea.css.map": "/MainInterface/static/css/main.45e642ea.css.map",
+    "main.352e57b4.css.map": "/MainInterface/static/css/main.352e57b4.css.map",
     "main.e6728934.js.map": "/MainInterface/static/js/main.e6728934.js.map",
     "453.ed3810f9.chunk.js.map": "/MainInterface/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45e642ea.css",
+    "static/css/main.352e57b4.css",
     "static/js/main.e6728934.js"
   ]
 }
