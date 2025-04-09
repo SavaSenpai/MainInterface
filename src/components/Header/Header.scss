@@ -46,9 +46,9 @@ $colorplace: #c0cdd7;
 }
 
 .header {
-  height: 200px;
+  height: 120px;
   background-color: $colorbackgraund;
-  padding-top: 20px;
+  // padding-top: 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -57,13 +57,13 @@ $colorplace: #c0cdd7;
   @include inlainer;
 
   @include onTablet {
-    height: 120px;
+    height: 100px;
   }
   @include onSmalldesktop {
-    height: 140px;
+    height: 120px;
   }
   @include onDesktop {
-    height: 160px;
+    height: 140px;
   }
 
   &__nav {
