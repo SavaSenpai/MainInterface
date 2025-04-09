@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './MainInterface.scss';
-import found from './found.png';
+import found from './found.jpg';
 import notfound from './not-found.png';
 
 export default function MainInterface() {
