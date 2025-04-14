@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DecisionMaking.scss';
+import InfoIcon from './info.svg';
 
-// Для загрузки файлов
 import { useDropzone } from 'react-dropzone';
 
 const DecisionMaking = () => {
@@ -130,7 +130,7 @@ const DecisionMaking = () => {
               onMouseEnter={() => setTooltip('classification')}
               onMouseLeave={() => setTooltip(null)}
             >
-              🛈
+              <img src={InfoIcon} alt="Info" className="info-icon" />
             </span>
             {tooltip === 'classification' && (
               <div className="tooltip-box">
@@ -217,7 +217,7 @@ const DecisionMaking = () => {
               onMouseEnter={() => setTooltip('causes')}
               onMouseLeave={() => setTooltip(null)}
             >
-              🛈
+              <img src={InfoIcon} alt="Info" className="info-icon" />
             </span>
             {tooltip === 'causes' && (
               <div className="tooltip-box">
@@ -251,7 +251,7 @@ const DecisionMaking = () => {
               onMouseEnter={() => setTooltip('strategy')}
               onMouseLeave={() => setTooltip(null)}
             >
-              🛈
+              <img src={InfoIcon} alt="Info" className="info-icon" />
             </span>
             {tooltip === 'strategy' && (
               <div className="tooltip-box">
@@ -281,7 +281,7 @@ const DecisionMaking = () => {
               onMouseEnter={() => setTooltip('accidents')}
               onMouseLeave={() => setTooltip(null)}
             >
-              🛈
+              <img src={InfoIcon} alt="Info" className="info-icon" />
             </span>
             {tooltip === 'accidents' && (
               <div className="tooltip-box">

@@ -215,12 +215,22 @@
   }
 }
 
+
 .tooltip-icon {
-  font-size: 11px;
+  display: inline-block;
   cursor: pointer;
-  color: #333;
-  margin-left: 5px;
-  vertical-align: top;
+  position: relative; 
+  width: 26px; 
+  height: 26px;
+  top: -4px;
+}
+
+.info-icon {
+  width: 150%; 
+  height: 150%;
+  display: block;
+  margin: 0; 
+  padding: 0;
 }
 
 .tooltip-box {
