@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MainInterface/static/css/main.59b596a3.css",
-    "main.js": "/MainInterface/static/js/main.02e311d3.js",
+    "main.js": "/MainInterface/static/js/main.8dd0d64c.js",
     "static/js/453.ed3810f9.chunk.js": "/MainInterface/static/js/453.ed3810f9.chunk.js",
     "static/media/found.jpg": "/MainInterface/static/media/found.8a5ec505cb3d8e80f681.jpg",
     "static/media/SCAD.ico": "/MainInterface/static/media/SCAD.c4b986c24ad5ae596e06.ico",
@@ -15,11 +15,11 @@
     "static/media/info.svg": "/MainInterface/static/media/info.6e95bdb3265d253e359205d851ce7975.svg",
     "index.html": "/MainInterface/index.html",
     "main.59b596a3.css.map": "/MainInterface/static/css/main.59b596a3.css.map",
-    "main.02e311d3.js.map": "/MainInterface/static/js/main.02e311d3.js.map",
+    "main.8dd0d64c.js.map": "/MainInterface/static/js/main.8dd0d64c.js.map",
     "453.ed3810f9.chunk.js.map": "/MainInterface/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.59b596a3.css",
-    "static/js/main.02e311d3.js"
+    "static/js/main.8dd0d64c.js"
   ]
 }
