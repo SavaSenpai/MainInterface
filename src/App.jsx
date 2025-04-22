@@ -5,6 +5,7 @@ import MainInterface  from './components/MainInterface/MainInterface';
 import DecisionMaking  from './components/DecisionMaking/DecisionMaking';
 import Calculator from './components/Calculator/Calculator';
 import Notfoundpage  from './components/Notfoundpage/Notfoundpage';
+import Information from './components/Information/information';
 import './App.scss';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/MainInterface" element={<MainInterface />} />
         <Route path="/DecisionMaking" element={<DecisionMaking />} />
+        <Route path='/information' element={<Information />} />
         <Route path="/Calculator" element={<Calculator />} />
         <Route path="*" element={<Notfoundpage />} />
       </Route>
