@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import './DecisionMaking.scss';
 import InfoIcon from './info.svg';
 
@@ -56,6 +57,15 @@ const DecisionMaking = () => {
   });
 
   return (
+<>
+    <Helmet>
+    <title>Decision Making Form</title>
+    <meta name="description" content="Форма для прийняття рішень, включаючи класифікацію об'єктів, опис проблем та рішень." />
+    <meta name="keywords" content="Прийняття рішень, класифікація об'єктів, опис проблем, рішення, форма" />
+    <meta name="author" content="НДІБВ" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </Helmet>
+
     <section className="decision-making-section">
       <h1 className="decision-making-title">Прийняття рішень</h1>
       <form className="decision-making-form">
@@ -329,7 +339,9 @@ const DecisionMaking = () => {
 
         <button type="submit" className="submit-button">Відправити</button>
       </form>
+      
     </section>
+    </>
   );
 };
 

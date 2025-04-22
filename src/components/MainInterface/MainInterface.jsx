@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import './MainInterface.scss';
 import found from './found.jpg';
 import notfound from './not-found.png';
@@ -24,24 +25,24 @@ export default function MainInterface() {
       status: match ? 'Знайдено аналог' : 'Аналог не знайдено',
       solution: match ? 'Стійки PERI + обмеження доступу' : 'Ручне рішення фахівця',
       image: match ? found : notfound,
-      description: match 
-        ? 'Система автоматично підібрала рішення на основі бази даних.' 
+      description: match
+        ? 'Система автоматично підібрала рішення на основі бази даних.'
         : 'Рішення потребує ручного аналізу фахівця.',
-      solutionDetails: match 
-        ? 'Для вирішення проблеми необхідно встановити стійки PERI та обмежити доступ до небезпечної зони.' 
+      solutionDetails: match
+        ? 'Для вирішення проблеми необхідно встановити стійки PERI та обмежити доступ до небезпечної зони.'
         : 'Фахівець проаналізує ситуацію та підбере відповідне рішення.'
     });
   };
 
   const downloadReport = () => {
     if (!result) return;
-    
+
     let reportText = `Звіт\n\nСерія будівлі: ${buildingType}\n`;
     damages.forEach((d, i) => {
       reportText += `Пошкодження ${i + 1}: ${d.type} — ${d.location}\n`;
     });
     reportText += `\nСтатус: ${result.status}\nРішення: ${result.solution}\n${result.solutionDetails}`;
-    
+
     const blob = new Blob([reportText], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
@@ -53,12 +54,23 @@ export default function MainInterface() {
 
   return (
     <div className="main-interface">
+      <Helmet>
+        <title>Демоверсія вибору рішень для будівель</title>
+        <meta name="description" content="Сервіс для автоматичного підбору рішень при пошкодженнях будівель. Введіть параметри та отримайте рекомендоване рішення." />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       <div className="container">
-        <h2 className="title">Демоверсія вибору рішень</h2>
-        
-        <div className="block">
-          <label className="label">Серія будівлі</label>
-          <select className="select" onChange={e => setBuildingType(e.target.value)} value={buildingType}>
+        <h1 className="title">Демоверсія вибору рішень</h1>
+
+        <section className="block">
+          <label className="label" htmlFor="buildingSelect">Серія будівлі</label>
+          <select
+            id="buildingSelect"
+            className="select"
+            onChange={e => setBuildingType(e.target.value)}
+            value={buildingType}
+          >
             <option value="">Оберіть серію</option>
             <option value="П-46">П-46</option>
             <option value="І-464">І-464</option>
@@ -66,51 +78,65 @@ export default function MainInterface() {
             <option value="КП">КП</option>
             <option value="інше">Інше</option>
           </select>
-        </div>
+        </section>
 
         {damages.map((d, index) => (
-          <div key={index} className="block">
+          <section key={index} className="block">
             <p className="label">Пошкодження №{index + 1}</p>
-            <select className="select" value={d.type} onChange={e => handleDamageChange(index, 'type', e.target.value)}>
+            <select
+              className="select"
+              value={d.type}
+              onChange={e => handleDamageChange(index, 'type', e.target.value)}
+            >
               <option value="">Тип пошкодження</option>
               <option value="тріщина">Тріщина</option>
               <option value="обвал">Обвал</option>
               <option value="деформація">Деформація</option>
               <option value="осідання">Осідання</option>
             </select>
-            <select className="select" value={d.location} onChange={e => handleDamageChange(index, 'location', e.target.value)}>
+            <select
+              className="select"
+              value={d.location}
+              onChange={e => handleDamageChange(index, 'location', e.target.value)}
+            >
               <option value="">Локація</option>
               <option value="фундамент">Фундамент</option>
               <option value="1 поверх">1 поверх</option>
               <option value="кут">Кут</option>
               <option value="верхній поверх">Верхній поверх</option>
             </select>
-          </div>
+          </section>
         ))}
 
         <div className="button-group">
           <button className="button" onClick={addDamage}>Додати ще</button>
           <button className="button" onClick={getDecision}>Отримати рішення</button>
         </div>
-        
+
         {result && (
-          <div className="report">
+          <article className="report">
             <div className="status-block">
-              <img src={result.image} alt="Статус" className="status-image" />
+              <img
+                src={result.image}
+                alt={result.status === 'Знайдено аналог' ? 'Аналог знайдено – рекомендоване рішення' : 'Аналог не знайдено – потрібен аналіз фахівця'}
+                className="status-image"
+              />
               <p className="status-text"><strong>Статус:</strong> {result.status}</p>
             </div>
+
             <div className="report-content">
-              <h3 className="report-title">Звіт</h3>
+              <h2 className="report-title">Звіт</h2>
               <p className="solution-details"><strong>Серія будівлі:</strong> {buildingType}</p>
               {damages.map((d, i) => (
-                <p className="solution-details" key={i}><strong>Пошкодження № {i + 1}:</strong> {d.type} — {d.location}</p>
+                <p className="solution-details" key={i}>
+                  <strong>Пошкодження № {i + 1}:</strong> {d.type} — {d.location}
+                </p>
               ))}
-
               <p className="solution-details"><strong>Рішення:</strong> {result.solution}</p>
               <p className="solution-details">{result.solutionDetails}</p>
               <button className="button__download" onClick={downloadReport}>Завантажити звіт</button>
             </div>
-          </div>
+          </article>
         )}
       </div>
     </div>
