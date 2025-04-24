@@ -1,25 +1,35 @@
 {
   "files": {
-    "main.css": "/MainInterface/static/css/main.4087c576.css",
-    "main.js": "/MainInterface/static/js/main.d111fd56.js",
+    "main.css": "/MainInterface/static/css/main.233a06cb.css",
+    "main.js": "/MainInterface/static/js/main.939bbc01.js",
     "static/js/453.ed3810f9.chunk.js": "/MainInterface/static/js/453.ed3810f9.chunk.js",
     "static/media/found.jpg": "/MainInterface/static/media/found.8a5ec505cb3d8e80f681.jpg",
     "static/media/SCAD.ico": "/MainInterface/static/media/SCAD.c4b986c24ad5ae596e06.ico",
     "static/media/AUTOCAD.ico": "/MainInterface/static/media/AUTOCAD.04be351062d69e311309.ico",
     "static/media/SAPFIR.ico": "/MainInterface/static/media/SAPFIR.2ddd3995d9990c92f823.ico",
     "static/media/LIRA.ico": "/MainInterface/static/media/LIRA.d0bf452d29428e743d27.ico",
+    "static/media/Робоча_версія_вимог_8.pdf": "/MainInterface/static/media/Робоча_версія_вимог_8.a6b43bc45b02b03b4577.pdf",
+    "static/media/Робоча_версія_вимог_3.pdf": "/MainInterface/static/media/Робоча_версія_вимог_3.62effc96e0b27982803e.pdf",
     "static/media/PLAXIS.ico": "/MainInterface/static/media/PLAXIS.14f245bbd3673fce001e.ico",
     "static/media/STAAD.ico": "/MainInterface/static/media/STAAD.c676478d0d9ec14a4205.ico",
+    "static/media/Робоча_версія_вимог_9.pdf": "/MainInterface/static/media/Робоча_версія_вимог_9.b0d4a397aac4e4a1c243.pdf",
+    "static/media/Робоча_версія_вимог_10.pdf": "/MainInterface/static/media/Робоча_версія_вимог_10.8e3dcb711b73674bfe0d.pdf",
+    "static/media/Робоча_версія_вимог_4.pdf": "/MainInterface/static/media/Робоча_версія_вимог_4.3ea3a3b682ddca628631.pdf",
+    "static/media/Робоча_версія_вимог_5.pdf": "/MainInterface/static/media/Робоча_версія_вимог_5.ed00c2975f28fd3b38f1.pdf",
+    "static/media/Робоча_версія_вимог_6.pdf": "/MainInterface/static/media/Робоча_версія_вимог_6.d45568df0b987175773e.pdf",
+    "static/media/Робоча_версія_вимог_2.pdf": "/MainInterface/static/media/Робоча_версія_вимог_2.f66c88e7e7f053989e5f.pdf",
+    "static/media/Робоча_версія_вимог_1.pdf": "/MainInterface/static/media/Робоча_версія_вимог_1.be27394cd4323a2df509.pdf",
+    "static/media/Робоча_версія_вимог_7.pdf": "/MainInterface/static/media/Робоча_версія_вимог_7.0d805215445270e4408e.pdf",
     "static/media/MONOMAX2024.png": "/MainInterface/static/media/MONOMAX2024.16dc6af7e76bc8441c6c.png",
     "static/media/not-found.png": "/MainInterface/static/media/not-found.e907004616f0cf61ce3c.png",
     "static/media/info.svg": "/MainInterface/static/media/info.6e95bdb3265d253e359205d851ce7975.svg",
     "index.html": "/MainInterface/index.html",
-    "main.4087c576.css.map": "/MainInterface/static/css/main.4087c576.css.map",
-    "main.d111fd56.js.map": "/MainInterface/static/js/main.d111fd56.js.map",
+    "main.233a06cb.css.map": "/MainInterface/static/css/main.233a06cb.css.map",
+    "main.939bbc01.js.map": "/MainInterface/static/js/main.939bbc01.js.map",
     "453.ed3810f9.chunk.js.map": "/MainInterface/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4087c576.css",
-    "static/js/main.d111fd56.js"
+    "static/css/main.233a06cb.css",
+    "static/js/main.939bbc01.js"
   ]
 }
