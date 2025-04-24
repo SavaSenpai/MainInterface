@@ -1,38 +1,105 @@
-// Base styles for the Information component
+$colortext: #333;
+$maintext: #585858;
+$maintitletext: #253757;
+$colorbackgraund: #f9f9f9;
+$colorplace: #c0cdd7;
 
-.information {
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding: 16px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+@mixin inlainer {
+  padding-inline: 20px;
 
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 10px;
-    color: #222;
+  @include onTablet {
+    padding-inline: 40px;
   }
 
-  p {
-    margin: 0 0 15px;
-    line-height: 1.6;
+  @include onSmalldesktop {
+    padding-inline: 54px;
   }
 
-  a {
-    color: #007bff;
-    text-decoration: none;
+  @include onDesktop {
+    padding-inline: 228px;
+  }
+}
 
-    &:hover {
-      text-decoration: underline;
+@mixin onBidDeskmenu {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin onSmalldesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+// ==== Стили страницы ====
+
+.info-page {
+  background-color: $colorbackgraund;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  @include inlainer;
+
+  &__title {
+    color: $colortext;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+
+    @include onTablet {
+      font-size: 2.4rem;
+    }
+
+    @include onDesktop {
+      font-size: 2.8rem;
     }
   }
 
-  ul, ol {
-    margin: 0 0 15px;
-    padding-left: 20px;
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    li {
-      margin-bottom: 5px;
+  &__item {
+    margin-bottom: 1.5rem;
+    padding: 10px 0;
+    border-bottom: 1px solid $colorplace;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colortext;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: $maintext;
+      transform: scale(1.03);
+    }
+
+    @include onTablet {
+      font-size: 1.1rem;
+    }
+
+    @include onDesktop {
+      font-size: 1.2rem;
     }
   }
 }
