@@ -1,8 +1,8 @@
-$colortext:#fff;
+$colortext: #fff;
 $maintext: #6c788b;
 $maintitletext: #253757;
-$colorbackgraund:#2c2c2c;
-$colorbutton:#2060f6;
+$colorbackgraund: #2c2c2c;
+$colorbutton: #2060f6;
 $colorplace: #c0cdd7;
 
 @mixin inlainer {
@@ -48,7 +48,6 @@ $colorplace: #c0cdd7;
 .header {
   height: 120px;
   background-color: $colorbackgraund;
-  // padding-top: 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -66,92 +65,186 @@ $colorplace: #c0cdd7;
     height: 140px;
   }
 
-  &__nav {
+  &__container {
     display: flex;
-    flex-direction: column; // По умолчанию столбик
-    gap: 15px;
-
-    @include onTablet {
-      flex-direction: column; // В столбик только на планшетах и мобильных
-      align-items: center;
-      gap: 15px;
-    }
-
-    @include onSmalldesktop {
-      flex-direction: row;
-      
-    }
-
-    @include onDesktop {
-      flex-direction: row; // В ряд на устройствах с экраном больше 1600px
-    }
-  }
-
-  &__menu {
-    display: flex;
-    flex-direction: column; // По умолчанию в столбик
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    @include onTablet {
-      flex-direction: column; // В столбик только на планшетах и мобильных
-      align-items: center;
-      gap: 10px;
-    }
-
-    @include onSmalldesktop {
-      flex-direction: row; // В ряд на устройствах с экраном больше 1024px
-    }
-
-    @include onDesktop {
-      flex-direction: row; // В ряд на устройствах с экраном больше 1600px
-    }
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   &__logo {
     display: flex;
     align-items: center;
   }
-  
+
   &__logo-image {
-    width: 70px; /* Размер изображения, можно подкорректировать */
+    width: 70px; /* Размер изображения */
     height: auto;
-    margin-right: 10px; /* Расстояние между картинкой и текстом */
+    margin-right: 10px; /* Расстояние между логотипом и текстом */
   }
-  
+
   &__logo-text {
-    font-size: 24px; /* Размер шрифта для текста */
+    font-size: 24px;
     font-weight: bold;
+  }
+
+  // Навигация для десктопа
+  &__nav {
+    display: none; // Скрыть для мобильных и планшетов по умолчанию
+
+    @include onSmalldesktop {
+      display: flex;
+      gap: 30px;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row; // Элементы в ряд
+    }
+
+    @include onDesktop {
+      display: flex; // Показываем на устройствах с экраном больше 1024px
+      gap: 30px;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row; // Элементы в ряд
+    }
+  }
+
+  &__menu {
+    display: none;
+    flex-direction: row;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__link {
     text-decoration: none;
     color: $colortext;
     font-weight: 600;
-    padding: 5px 5px;
+    padding: 5px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    white-space: nowrap; // Запрещает перенос текста
-  
+
     &:hover {
       background-color: lighten($colorbackgraund, 10%);
       color: $colorbutton;
-      transform: scale(1.1); // Увеличиваем элемент
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Добавляем тень
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-  
-  
+
     @include onTablet {
       font-size: 16px;
     }
+
     @include onSmalldesktop {
       font-size: 18px;
     }
+
     @include onDesktop {
       font-size: 20px;
     }
   }
-}
 
+  // Кнопка меню для мобильных устройств
+  .header__menu-button {
+    display: block;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+    @include onSmalldesktop {
+      display: none; // Скрываем кнопку на устройствах с экраном больше 1024px
+    }
+  }
+
+  // Модальное меню для мобильных устройств
+  .header__modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Высокий приоритет */
+    animation: fadeIn 0.3s ease;
+
+    &--open {
+      display: flex; /* Показываем, если класс 'header__modal--open' добавлен */
+    }
+
+    .header__menu-mobile {
+      background-color: $colorbackgraund;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 80%; /* Ширина меню */
+      max-width: 400px; /* Ограничиваем максимальную ширину */
+      border-radius: 10px; /* Скругляем углы */
+      animation: slideIn 0.3s ease-out;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      width: 100%; /* Чтобы меню не выходило за пределы */
+    }
+
+    li {
+      width: 100%; /* Ширина пункта меню */
+      text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .header__link-mobile {
+      text-decoration: none;
+      color: $colortext;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px;
+      display: block;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: lighten($colorbackgraund, 10%);
+        color: $colorbutton;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  /* Анимация для появления */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Анимация для появления меню сдвигом */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px); /* Меню будет сдвигаться сверху */
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
