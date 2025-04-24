@@ -36,9 +36,9 @@ function Header() {
         <nav className="header__nav">
           <ul className="header__menu">
             <li><Link to="/MainInterface" className="header__link">Головна</Link></li>
-            <li><Link to="/DecisionMaking" className="header__link">Прийняття рішень</Link></li>
             <li><Link to="/information" className="header__link">Інформація</Link></li>
             <li><Link to="/Calculator" className="header__link">Розрахункове ПЗ</Link></li>
+            <li><Link to="/DecisionMaking" className="header__link">Прийняття рішень</Link></li>
           </ul>
         </nav>
       </div>
@@ -48,9 +48,9 @@ function Header() {
         <div className="header__menu-mobile" onClick={(e) => e.stopPropagation()}>
           <ul>
             <li><Link to="/MainInterface" className="header__link-mobile" onClick={closeModal}>Головна</Link></li>
-            <li><Link to="/DecisionMaking" className="header__link-mobile" onClick={closeModal}>Прийняття рішень</Link></li>
             <li><Link to="/information" className="header__link-mobile" onClick={closeModal}>Інформація</Link></li>
             <li><Link to="/Calculator" className="header__link-mobile" onClick={closeModal}>Розрахункове ПЗ</Link></li>
+            <li><Link to="/DecisionMaking" className="header__link-mobile" onClick={closeModal}>Прийняття рішень</Link></li>
           </ul>
         </div>
       </div>
