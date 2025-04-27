@@ -19,23 +19,6 @@ const Footer = () => {
               <strong>Е-mail:</strong> 
               <a href="mailto:ndibv_post@ukr.net" className="footer__contact__email">ndibv_post@ukr.net</a>
             </p>
-          </div>
-
-          <div className="footer__contact__section">
-            <h3 className="footer__contact__section__title">Відділ по роботі із замовниками</h3>
-            <p className="footer__contact__section__text">
-              <strong>тел.:</strong> 
-              <a href="tel:+380442488889" className="footer__contact__phone">(044) 248-88-89</a>
-            </p>
-            <p className="footer__contact__section__text">
-              <strong>факс.:</strong>
-              <a href="tel:+380442751225" className="footer__contact__phone">(044) 275- 12-25</a>
-            </p>
-            <p className="footer__contact__section__text">
-              <strong>Е-mail:</strong> 
-              <a href="mailto:ndibv_post@ukr.net" className="footer__contact__email">ndibv_post@ukr.net</a>
-            </p>
-
             <p className="footer__contact__section__text">
               <strong>Адреса:</strong> 
               <a
@@ -44,8 +27,8 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="footer__contact__address"
               >
-      м. Київ, пр. Лобановського 51
-    </a>
+                м. Київ, пр. Лобановського 51
+              </a>
             </p>
           </div>
         </div>
